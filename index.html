@@ -4,32 +4,32 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>FuelPlus — Fuel Everything.</title>
-<meta name="description" content="Premium fuel and energy products, delivered." />
+<meta name="description" content="Propane, water, ice, and essentials — delivered or ready for pickup." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0b0b0d;
-    --bg-elevated: #131316;
-    --bg-card: #17171b;
-    --border: #24242a;
-    --border-strong: #303038;
+    --bg: #1A1A1A;
+    --bg-deep: #121212;
+    --bg-elevated: #222224;
+    --bg-card: #1f1f22;
+    --border: #2a2a2e;
+    --border-strong: #36363c;
     --text: #f4f4f5;
-    --text-muted: #9a9aa3;
-    --text-dim: #6a6a73;
+    --text-muted: #a4a4ad;
+    --text-dim: #6e6e76;
     --accent: #FF6B00;
     --accent-hover: #ff7d1f;
-    --accent-glow: rgba(255, 107, 0, 0.25);
+    --accent-glow: rgba(255, 107, 0, 0.28);
     --accent-soft: rgba(255, 107, 0, 0.08);
     --radius: 4px;
-    --radius-lg: 6px;
+    --radius-lg: 8px;
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
     --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -48,7 +48,7 @@
     inset: 0;
     background-image: var(--grain);
     background-repeat: repeat;
-    opacity: 0.06;
+    opacity: 0.05;
     pointer-events: none;
     z-index: 1;
     mix-blend-mode: overlay;
@@ -59,13 +59,13 @@
   img { max-width: 100%; display: block; }
 
   .mono {
-    font-family: 'Space Mono', ui-monospace, monospace;
-    letter-spacing: 0.02em;
+    font-family: 'DM Mono', ui-monospace, monospace;
+    letter-spacing: 0.01em;
   }
 
   .container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1320px;
     margin: 0 auto;
     padding: 0 24px;
   }
@@ -75,7 +75,7 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(11, 11, 13, 0.78);
+    background: rgba(26, 26, 26, 0.82);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
@@ -91,28 +91,24 @@
   .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 9px;
     font-weight: 700;
     font-size: 19px;
     letter-spacing: -0.01em;
   }
 
   .logo-mark {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     display: grid;
     place-items: center;
-    background: var(--accent);
-    border-radius: 3px;
-    box-shadow: 0 0 0 1px rgba(255, 107, 0, 0.3), 0 6px 18px -6px var(--accent-glow);
-  }
-
-  .logo-mark svg { width: 14px; height: 14px; }
-
-  .logo-plus {
     color: var(--accent);
-    font-weight: 700;
+    filter: drop-shadow(0 0 10px rgba(255, 107, 0, 0.3));
   }
+
+  .logo-mark svg { width: 24px; height: 24px; }
+
+  .logo-plus { color: var(--accent); font-weight: 700; }
 
   .nav-links {
     display: flex;
@@ -128,9 +124,7 @@
     position: relative;
     padding: 6px 0;
   }
-
   .nav-links a:hover { color: var(--text); }
-
   .nav-links a::after {
     content: "";
     position: absolute;
@@ -141,7 +135,6 @@
     background: var(--accent);
     transition: width 0.3s var(--ease);
   }
-
   .nav-links a:hover::after { width: 100%; }
 
   .nav-actions {
@@ -171,17 +164,16 @@
     padding: 0 5px;
     border-radius: 9px;
     background: var(--accent);
-    color: #0b0b0d;
-    font-family: 'Space Mono', monospace;
+    color: #1A1A1A;
+    font-family: 'DM Mono', monospace;
     font-size: 10px;
-    font-weight: 700;
+    font-weight: 500;
     display: grid;
     place-items: center;
     line-height: 1;
     transform: scale(0);
     transition: transform 0.25s var(--ease);
   }
-
   .cart-badge.visible { transform: scale(1); }
 
   .menu-toggle {
@@ -198,7 +190,7 @@
   /* ============ HERO ============ */
   .hero {
     position: relative;
-    padding: 120px 0 140px;
+    padding: 110px 0 130px;
     overflow: hidden;
     border-bottom: 1px solid var(--border);
   }
@@ -208,9 +200,9 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 107, 0, 0.18), transparent 70%),
-      radial-gradient(ellipse 60% 50% at 100% 100%, rgba(255, 107, 0, 0.08), transparent 70%),
-      linear-gradient(180deg, #0b0b0d 0%, #0e0e11 100%);
+      radial-gradient(ellipse 70% 55% at 50% 0%, rgba(255, 107, 0, 0.18), transparent 70%),
+      radial-gradient(ellipse 60% 50% at 100% 100%, rgba(255, 107, 0, 0.06), transparent 70%),
+      linear-gradient(180deg, #1A1A1A 0%, #161618 100%);
     z-index: 0;
   }
 
@@ -220,15 +212,21 @@
     inset: 0;
     background:
       linear-gradient(90deg, transparent 0%, transparent calc(50% - 0.5px), rgba(255,107,0,0.04) 50%, transparent calc(50% + 0.5px), transparent 100%),
-      repeating-linear-gradient(0deg, transparent 0, transparent 80px, rgba(255,255,255,0.015) 80px, rgba(255,255,255,0.015) 81px);
+      repeating-linear-gradient(0deg, transparent 0, transparent 80px, rgba(255,255,255,0.012) 80px, rgba(255,255,255,0.012) 81px);
     z-index: 0;
     pointer-events: none;
+    animation: drift 28s linear infinite;
+  }
+
+  @keyframes drift {
+    0% { background-position: 0 0, 0 0; }
+    100% { background-position: 0 0, 0 80px; }
   }
 
   .hero-inner {
     position: relative;
     z-index: 2;
-    max-width: 880px;
+    max-width: 920px;
   }
 
   .hero-eyebrow {
@@ -237,9 +235,9 @@
     gap: 8px;
     padding: 6px 12px;
     background: rgba(255, 107, 0, 0.08);
-    border: 1px solid rgba(255, 107, 0, 0.25);
+    border: 1px solid rgba(255, 107, 0, 0.26);
     border-radius: 100px;
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.12em;
@@ -276,7 +274,7 @@
   .hero p {
     font-size: clamp(18px, 2vw, 22px);
     color: var(--text-muted);
-    max-width: 540px;
+    max-width: 580px;
     margin-bottom: 40px;
     line-height: 1.45;
   }
@@ -285,6 +283,7 @@
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
+    margin-bottom: 36px;
   }
 
   .btn {
@@ -302,7 +301,7 @@
 
   .btn-primary {
     background: var(--accent);
-    color: #0b0b0d;
+    color: #1A1A1A;
     box-shadow: 0 8px 24px -8px var(--accent-glow);
   }
 
@@ -311,57 +310,111 @@
     transform: translateY(-1px);
     box-shadow: 0 12px 28px -8px rgba(255, 107, 0, 0.45);
   }
-
   .btn-primary:active { transform: translateY(0); }
 
-  .btn-ghost {
+  .btn-outline {
     background: transparent;
-    border-color: var(--border-strong);
-    color: var(--text);
+    border-color: var(--accent);
+    color: var(--accent);
   }
-  .btn-ghost:hover {
-    border-color: var(--text-muted);
-    background: var(--bg-elevated);
+  .btn-outline:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
   }
 
-  .btn-arrow {
-    transition: transform 0.2s var(--ease);
-  }
+  .btn-arrow { transition: transform 0.2s var(--ease); }
   .btn:hover .btn-arrow { transform: translateX(3px); }
 
-  .hero-meta {
-    margin-top: 80px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    padding-top: 40px;
-    border-top: 1px solid var(--border);
+  .trust-badges {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
-  .hero-meta-item .label {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
+  .trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--text-dim);
-    margin-bottom: 8px;
-  }
-
-  .hero-meta-item .value {
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  }
-
-  .hero-meta-item .value .unit {
+    letter-spacing: 0.08em;
     color: var(--text-muted);
-    font-size: 16px;
-    margin-left: 4px;
   }
 
-  /* ============ SECTION HEADERS ============ */
+  .trust-badge svg {
+    width: 14px;
+    height: 14px;
+    color: var(--accent);
+  }
+
+  .trust-divider {
+    width: 1px;
+    height: 14px;
+    background: var(--border-strong);
+  }
+
+  /* ============ CATEGORY BAR ============ */
+  .category-section {
+    position: sticky;
+    top: 68px;
+    z-index: 40;
+    background: rgba(26, 26, 26, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .category-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 16px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .category-tabs::-webkit-scrollbar { display: none; }
+
+  .cat-tab {
+    flex-shrink: 0;
+    padding: 9px 16px;
+    border-radius: 100px;
+    border: 1px solid var(--border-strong);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: transparent;
+    transition: all 0.2s var(--ease);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .cat-tab:hover {
+    color: var(--text);
+    border-color: var(--text-muted);
+  }
+
+  .cat-tab.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #1A1A1A;
+    font-weight: 600;
+  }
+
+  .cat-tab .count {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    opacity: 0.7;
+  }
+  .cat-tab.active .count { opacity: 0.85; }
+
+  /* ============ SECTION ============ */
   .section {
-    padding: 120px 0;
+    padding: 96px 0;
     position: relative;
   }
 
@@ -369,13 +422,13 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 56px;
+    margin-bottom: 48px;
     gap: 32px;
     flex-wrap: wrap;
   }
 
   .section-tag {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.16em;
@@ -417,16 +470,25 @@
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     overflow: hidden;
+    transition: opacity 0.25s var(--ease);
   }
+
+  .product-grid.filtering { opacity: 0.4; }
 
   .product-card {
     background: var(--bg);
-    padding: 28px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     position: relative;
-    transition: background 0.3s var(--ease);
-    cursor: pointer;
+    transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+    cursor: default;
+    animation: cardIn 0.4s var(--ease) backwards;
+  }
+
+  @keyframes cardIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .product-card::before {
@@ -434,7 +496,6 @@
     position: absolute;
     inset: 0;
     border: 1px solid transparent;
-    border-radius: 0;
     transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
     pointer-events: none;
     z-index: 2;
@@ -450,10 +511,10 @@
   }
 
   .product-image {
-    aspect-ratio: 1;
-    background: linear-gradient(145deg, #1a1a1f, #0f0f12);
+    aspect-ratio: 1.15;
+    background: linear-gradient(145deg, #25252a, #16161a);
     border-radius: var(--radius);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     display: grid;
     place-items: center;
     overflow: hidden;
@@ -467,41 +528,47 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(circle at 30% 20%, rgba(255, 107, 0, 0.08), transparent 50%),
+      radial-gradient(circle at 30% 20%, rgba(255, 107, 0, 0.07), transparent 55%),
       var(--grain);
-    background-blend-mode: normal;
-    opacity: 0.6;
+    opacity: 0.7;
     pointer-events: none;
   }
 
   .product-card:hover .product-image {
-    transform: scale(1.02);
+    transform: scale(1.015);
     border-color: var(--border-strong);
   }
 
-  .product-image svg {
+  .product-icon {
     width: 56%;
     height: 56%;
     color: var(--text-muted);
     transition: color 0.3s var(--ease), transform 0.4s var(--ease);
     z-index: 1;
     position: relative;
+    display: grid;
+    place-items: center;
   }
 
-  .product-card:hover .product-image svg {
+  .product-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .product-card:hover .product-icon {
     color: var(--accent);
-    transform: scale(1.05) rotate(-2deg);
+    transform: scale(1.04) rotate(-2deg);
   }
 
-  .product-tag {
+  .product-cat-badge {
     position: absolute;
-    top: 12px;
-    left: 12px;
+    top: 10px;
+    left: 10px;
     padding: 4px 8px;
-    background: rgba(11, 11, 13, 0.85);
+    background: rgba(20, 20, 22, 0.9);
     border: 1px solid var(--border-strong);
     border-radius: 3px;
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -509,28 +576,47 @@
     z-index: 2;
   }
 
-  .product-sku {
-    font-family: 'Space Mono', monospace;
+  .product-stock {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    background: rgba(20, 20, 22, 0.9);
+    border: 1px solid rgba(80, 200, 80, 0.3);
+    border-radius: 3px;
+    font-family: 'DM Mono', monospace;
     font-size: 10px;
-    color: var(--text-dim);
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 8px;
+    letter-spacing: 0.08em;
+    color: #6dd06d;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .product-stock::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background: #6dd06d;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #6dd06d;
   }
 
   .product-name {
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 600;
     letter-spacing: -0.01em;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     line-height: 1.25;
   }
 
   .product-desc {
-    font-size: 14px;
+    font-size: 13.5px;
     color: var(--text-muted);
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     flex: 1;
   }
 
@@ -542,18 +628,30 @@
     margin-top: auto;
   }
 
+  .product-price-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+
   .product-price {
-    font-family: 'Space Mono', monospace;
-    font-size: 18px;
-    font-weight: 700;
+    font-family: 'DM Mono', monospace;
+    font-size: 20px;
+    font-weight: 500;
     color: var(--text);
     letter-spacing: -0.01em;
   }
 
-  .product-price .currency { color: var(--text-muted); margin-right: 2px; }
+  .product-price.free { color: var(--accent); font-weight: 500; font-size: 14px; }
+
+  .product-unit {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
 
   .add-btn {
-    padding: 10px 16px;
+    padding: 9px 14px;
     border: 1px solid var(--border-strong);
     border-radius: var(--radius);
     font-size: 13px;
@@ -569,21 +667,103 @@
   .add-btn:hover {
     background: var(--accent);
     border-color: var(--accent);
-    color: #0b0b0d;
+    color: #1A1A1A;
   }
-
   .add-btn.added {
     background: var(--accent);
     border-color: var(--accent);
-    color: #0b0b0d;
+    color: #1A1A1A;
+  }
+  .add-btn svg { width: 14px; height: 14px; }
+
+  .empty-state {
+    grid-column: 1 / -1;
+    padding: 80px 32px;
+    text-align: center;
+    color: var(--text-muted);
+  }
+  .empty-state .title { color: var(--text); font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+
+  /* ============ DELIVERY INFO ============ */
+  .delivery {
+    background: var(--bg-deep);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
   }
 
-  .add-btn svg { width: 14px; height: 14px; }
+  .delivery::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 96px;
+    bottom: 96px;
+    width: 3px;
+    background: var(--accent);
+    box-shadow: 0 0 24px var(--accent-glow);
+  }
+
+  .delivery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .delivery-card {
+    background: var(--bg);
+    padding: 36px 32px;
+    transition: background 0.3s var(--ease);
+  }
+  .delivery-card:hover { background: var(--bg-elevated); }
+
+  .delivery-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius);
+    background: var(--accent-soft);
+    border: 1px solid rgba(255,107,0,0.25);
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .delivery-icon svg { width: 22px; height: 22px; }
+
+  .delivery-card h3 {
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .delivery-card p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  .delivery-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border-strong);
+  }
 
   /* ============ ABOUT ============ */
   .about {
     background: var(--bg-elevated);
-    border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     position: relative;
     overflow: hidden;
@@ -634,23 +814,19 @@
   }
 
   .stat .stat-num {
-    font-family: 'Space Mono', monospace;
-    font-size: 32px;
-    font-weight: 700;
+    font-family: 'DM Mono', monospace;
+    font-size: 30px;
+    font-weight: 500;
     color: var(--accent);
     line-height: 1;
     margin-bottom: 6px;
     letter-spacing: -0.02em;
   }
-
-  .stat .stat-label {
-    font-size: 13px;
-    color: var(--text-muted);
-  }
+  .stat .stat-label { font-size: 13px; color: var(--text-muted); }
 
   /* ============ FOOTER ============ */
   .footer {
-    padding: 80px 0 40px;
+    padding: 72px 0 36px;
     background: var(--bg);
     border-top: 1px solid var(--border);
   }
@@ -659,7 +835,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 48px;
-    margin-bottom: 64px;
+    margin-bottom: 56px;
   }
 
   .footer-brand p {
@@ -671,13 +847,13 @@
   }
 
   .footer-col h4 {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--text-dim);
     margin-bottom: 18px;
-    font-weight: 700;
+    font-weight: 500;
   }
 
   .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
@@ -689,14 +865,14 @@
   .footer-col a:hover { color: var(--accent); }
 
   .footer-bottom {
-    padding-top: 32px;
+    padding-top: 28px;
     border-top: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 11px;
     color: var(--text-dim);
     text-transform: uppercase;
@@ -715,7 +891,6 @@
     transition: opacity 0.3s var(--ease), visibility 0.3s var(--ease);
     z-index: 90;
   }
-
   .overlay.open { opacity: 1; visibility: visible; }
 
   .cart {
@@ -733,11 +908,10 @@
     display: flex;
     flex-direction: column;
   }
-
   .cart.open { transform: translateX(0); }
 
   .cart-header {
-    padding: 24px 28px;
+    padding: 22px 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -751,7 +925,7 @@
   }
 
   .cart-header h3 .count {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 13px;
     color: var(--text-muted);
     font-weight: 400;
@@ -774,7 +948,6 @@
     overflow-y: auto;
     padding: 8px 28px;
   }
-
   .cart-items::-webkit-scrollbar { width: 6px; }
   .cart-items::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
 
@@ -807,18 +980,17 @@
 
   .cart-item {
     display: grid;
-    grid-template-columns: 64px 1fr auto;
-    gap: 16px;
-    padding: 20px 0;
+    grid-template-columns: 56px 1fr auto;
+    gap: 14px;
+    padding: 18px 0;
     border-bottom: 1px solid var(--border);
-    align-items: center;
+    align-items: flex-start;
   }
-
   .cart-item:last-child { border-bottom: none; }
 
   .cart-item-image {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     border-radius: var(--radius);
     background: var(--bg-elevated);
     border: 1px solid var(--border);
@@ -836,7 +1008,7 @@
   }
 
   .cart-item-price {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 12px;
     color: var(--text-muted);
   }
@@ -845,7 +1017,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-top: 8px;
+    margin-top: 10px;
     background: var(--bg-elevated);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -861,15 +1033,14 @@
     place-items: center;
     color: var(--text-muted);
     transition: all 0.15s var(--ease);
-    font-size: 14px;
   }
   .qty-btn:hover { background: var(--bg); color: var(--accent); }
   .qty-btn svg { width: 12px; height: 12px; }
 
   .qty-val {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 500;
     width: 20px;
     text-align: center;
   }
@@ -881,12 +1052,13 @@
     gap: 8px;
     height: 100%;
     justify-content: space-between;
+    min-height: 56px;
   }
 
   .cart-item-total {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
   }
 
   .remove-btn {
@@ -895,7 +1067,7 @@
     text-transform: uppercase;
     letter-spacing: 0.08em;
     transition: color 0.15s var(--ease);
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
   }
   .remove-btn:hover { color: var(--accent); }
 
@@ -919,8 +1091,8 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin: 16px 0 20px;
-    padding-top: 16px;
+    margin: 14px 0 18px;
+    padding-top: 14px;
     border-top: 1px solid var(--border);
   }
 
@@ -928,14 +1100,14 @@
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     color: var(--text-muted);
   }
 
   .cart-total .value {
-    font-family: 'Space Mono', monospace;
+    font-family: 'DM Mono', monospace;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: -0.01em;
   }
 
@@ -944,7 +1116,7 @@
     padding: 16px;
     border-radius: var(--radius);
     background: var(--accent);
-    color: #0b0b0d;
+    color: #1A1A1A;
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
@@ -959,7 +1131,7 @@
   .checkout-btn:disabled { opacity: 0.5; cursor: not-allowed; }
   .checkout-btn svg { width: 16px; height: 16px; }
 
-  /* ============ MOBILE MENU ============ */
+  /* ============ MOBILE NAV ============ */
   .mobile-nav {
     position: fixed;
     top: 68px;
@@ -967,7 +1139,7 @@
     right: 0;
     background: var(--bg);
     border-bottom: 1px solid var(--border);
-    padding: 16px 24px 24px;
+    padding: 12px 24px 20px;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
@@ -994,11 +1166,13 @@
   .mobile-nav li:last-child a { border-bottom: none; }
 
   /* ============ RESPONSIVE ============ */
-  @media (max-width: 960px) {
+  @media (max-width: 1000px) {
     .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .delivery-grid { grid-template-columns: 1fr; }
+    .delivery::before { display: none; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    .section { padding: 80px 0; }
+    .section { padding: 72px 0; }
     .hero { padding: 80px 0 100px; }
   }
 
@@ -1006,22 +1180,24 @@
     .nav-links { display: none; }
     .menu-toggle { display: inline-flex; }
     .product-grid { grid-template-columns: 1fr; }
-    .hero-meta { grid-template-columns: 1fr; gap: 24px; }
     .section-head { flex-direction: column; align-items: flex-start; }
     .section-sub { text-align: left; }
     .footer-grid { grid-template-columns: 1fr; gap: 32px; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
     .about-stats { grid-template-columns: 1fr; }
     .hero-actions .btn { flex: 1; justify-content: center; }
+    .trust-divider { display: none; }
+    .trust-badges { gap: 14px 18px; }
   }
 
   @media (max-width: 480px) {
-    .container { padding: 0 20px; }
-    .hero { padding: 64px 0 80px; }
+    .container { padding: 0 18px; }
+    .hero { padding: 56px 0 72px; }
     .hero h1 { font-size: 56px; }
-    .section { padding: 64px 0; }
+    .section { padding: 56px 0; }
     .cart { max-width: 100%; }
     .cart-header, .cart-items, .cart-footer { padding-left: 20px; padding-right: 20px; }
+    .delivery-card { padding: 28px 24px; }
   }
 
   /* ============ MICRO ANIMS ============ */
@@ -1043,8 +1219,8 @@
   <div class="container nav-inner">
     <a href="#" class="logo" aria-label="FuelPlus home">
       <span class="logo-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2 L5 13 H11 L9 22 L19 10 H13 L15 2 Z" fill="#0b0b0d"/>
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2 C 13 6 16 7 16 11 C 16 13 14.5 14 13.5 14 C 14.5 12 13 11 13 9 C 13 7 11 6 11 4 C 10 6 8 7 8 10 C 8 13 6 14 6 17 C 6 20.3 8.7 23 12 23 C 15.3 23 18 20.3 18 17 C 18 13 15 11.5 15 9 C 14 11 13.5 12 13 12 C 13 9 12 7 12 2 Z"/>
         </svg>
       </span>
       <span>Fuel<span class="logo-plus">+</span></span>
@@ -1052,7 +1228,8 @@
 
     <ul class="nav-links">
       <li><a href="#shop">Shop</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#delivery">Delivery Info</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
 
@@ -1075,7 +1252,8 @@
   <div class="mobile-nav" id="mobileNav">
     <ul>
       <li><a href="#shop">Shop</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#delivery">Delivery Info</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -1084,9 +1262,9 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="container hero-inner">
-    <div class="hero-eyebrow mono">New batch — shipping now</div>
+    <div class="hero-eyebrow mono">Now delivering — same-day available</div>
     <h1>Fuel<br/><span class="italic accent">Everything.</span></h1>
-    <p>Premium fuel and energy products, delivered. Engineered for hard work, long miles, and the days that don't end.</p>
+    <p>Propane, water, ice, and essentials — delivered or ready for pickup. The everything-you-forgot truck, online-first.</p>
     <div class="hero-actions">
       <a href="#shop" class="btn btn-primary">
         Browse Products
@@ -1094,25 +1272,33 @@
           <path d="M5 12h14M13 5l7 7-7 7"/>
         </svg>
       </a>
-      <a href="#about" class="btn btn-ghost">Our Story</a>
+      <a href="#delivery" class="btn btn-outline">Delivery Info</a>
     </div>
-
-    <div class="hero-meta">
-      <div class="hero-meta-item">
-        <div class="label mono">Active SKUs</div>
-        <div class="value mono">142<span class="unit">products</span></div>
-      </div>
-      <div class="hero-meta-item">
-        <div class="label mono">Avg Delivery</div>
-        <div class="value mono">2.4<span class="unit">days</span></div>
-      </div>
-      <div class="hero-meta-item">
-        <div class="label mono">Operators Trust Us</div>
-        <div class="value mono">12K+<span class="unit">accounts</span></div>
-      </div>
+    <div class="trust-badges">
+      <span class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Same-Day Delivery
+      </span>
+      <span class="trust-divider"></span>
+      <span class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M6 6v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+        Bulk Pricing
+      </span>
+      <span class="trust-divider"></span>
+      <span class="trust-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+        No Minimums
+      </span>
     </div>
   </div>
 </section>
+
+<!-- ============ CATEGORY FILTER ============ -->
+<div class="category-section" id="categories">
+  <div class="container">
+    <div class="category-tabs" id="catTabs"></div>
+  </div>
+</div>
 
 <!-- ============ PRODUCT GRID ============ -->
 <section class="section" id="shop">
@@ -1120,39 +1306,100 @@
     <div class="section-head">
       <div>
         <div class="section-tag mono">01 — Catalog</div>
-        <h2>Featured Products</h2>
+        <h2 id="catalogTitle">All Products</h2>
       </div>
-      <p class="section-sub">Hand-picked gear and consumables. Built for the long haul, priced for the working day.</p>
+      <p class="section-sub">Stocked daily across our regional hubs. Same-day windows on all in-stock items, no minimums.</p>
     </div>
 
     <div class="product-grid" id="productGrid"></div>
   </div>
 </section>
 
+<!-- ============ DELIVERY INFO ============ -->
+<section class="section delivery" id="delivery">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-tag mono">02 — Logistics</div>
+        <h2>Delivered, picked up, or scaled.</h2>
+      </div>
+      <p class="section-sub">Three ways to get what you need — built around how you actually work.</p>
+    </div>
+
+    <div class="delivery-grid">
+      <div class="delivery-card">
+        <div class="delivery-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="6" width="14" height="11" rx="1"/>
+            <path d="M15 9h4l3 4v4h-7"/>
+            <circle cx="6" cy="19" r="2"/>
+            <circle cx="18" cy="19" r="2"/>
+          </svg>
+        </div>
+        <h3>Delivery</h3>
+        <p>Order before 2pm for same-day. Scheduled drops for tomorrow or next week. Track your driver in real time.</p>
+        <div class="delivery-meta">
+          <span>Same-day · No minimum</span>
+        </div>
+      </div>
+
+      <div class="delivery-card">
+        <div class="delivery-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9h18l-2 11H5L3 9z"/>
+            <path d="M8 9V6a4 4 0 0 1 8 0v3"/>
+          </svg>
+        </div>
+        <h3>Pickup</h3>
+        <p>Schedule online, walk in, walk out. Your order is bagged, tagged, and ready at the counter. No waiting.</p>
+        <div class="delivery-meta">
+          <span>30-minute prep · 7 days a week</span>
+        </div>
+      </div>
+
+      <div class="delivery-card">
+        <div class="delivery-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21V7l9-4 9 4v14"/>
+            <path d="M9 21v-6h6v6"/>
+            <path d="M3 21h18"/>
+          </svg>
+        </div>
+        <h3>Bulk Orders</h3>
+        <p>Events, vendors, work crews — custom pricing on volume. Net terms available. We deliver, set up, and reload.</p>
+        <div class="delivery-meta">
+          <span>Custom pricing · Net 30</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ ABOUT ============ -->
-<section class="section about" id="about">
+<section class="section about">
   <div class="container">
     <div class="about-grid">
       <div>
-        <div class="section-tag mono">02 — About</div>
-        <h2>Built for people who<br/>actually use the stuff.</h2>
+        <div class="section-tag mono">03 — About</div>
+        <h2>The everything-you-forgot truck — online-first.</h2>
       </div>
       <div class="about-content">
-        <p>FuelPlus is an independent marketplace for the fuels, additives, batteries, and energy gear that keep equipment moving and crews running. We carry product we'd put in our own trucks — nothing else.</p>
-        <p>Every SKU is sourced direct from manufacturers we've vetted in person. We hold inventory in regional hubs so orders ship in <strong>under 48 hours</strong>, and we stand behind everything we sell with a no-questions return policy.</p>
+        <p>FuelPlus is the easiest way to get <strong>propane, water, ice, and everyday essentials</strong> delivered to your campsite, job site, tailgate, or front door.</p>
+        <p>We started because the gas station run kills your morning. Crews lose an hour. Tailgates stall out. Vendors run dry mid-event. So we built the run instead — a fleet of trucks, a tight catalog of stuff people actually need, and a checkout that takes ninety seconds.</p>
+        <p>Order online. Pick a window. We show up.</p>
 
         <div class="about-stats">
           <div class="stat">
-            <div class="stat-num">2019</div>
-            <div class="stat-label">Year founded</div>
+            <div class="stat-num">2hr</div>
+            <div class="stat-label">Same-day window</div>
           </div>
           <div class="stat">
-            <div class="stat-num">48hr</div>
-            <div class="stat-label">Ship window</div>
+            <div class="stat-num">$0</div>
+            <div class="stat-label">Order minimum</div>
           </div>
           <div class="stat">
-            <div class="stat-num">4.9★</div>
-            <div class="stat-label">Buyer rating</div>
+            <div class="stat-num">7d</div>
+            <div class="stat-label">Operating week</div>
           </div>
         </div>
       </div>
@@ -1167,50 +1414,49 @@
       <div class="footer-brand">
         <a href="#" class="logo">
           <span class="logo-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M12 2 L5 13 H11 L9 22 L19 10 H13 L15 2 Z" fill="#0b0b0d"/>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2 C 13 6 16 7 16 11 C 16 13 14.5 14 13.5 14 C 14.5 12 13 11 13 9 C 13 7 11 6 11 4 C 10 6 8 7 8 10 C 8 13 6 14 6 17 C 6 20.3 8.7 23 12 23 C 15.3 23 18 20.3 18 17 C 18 13 15 11.5 15 9 C 14 11 13.5 12 13 12 C 13 9 12 7 12 2 Z"/>
             </svg>
           </span>
           <span>Fuel<span class="logo-plus">+</span></span>
         </a>
-        <p>Premium fuel and energy products, delivered to operators, fleets, and individuals nationwide.</p>
+        <p>Propane, water, ice, and essentials — delivered or ready for pickup, seven days a week.</p>
       </div>
       <div class="footer-col">
         <h4>Shop</h4>
         <ul>
           <li><a href="#shop">All Products</a></li>
-          <li><a href="#shop">Fuel & Additives</a></li>
-          <li><a href="#shop">Power & Batteries</a></li>
-          <li><a href="#shop">Energy Supplements</a></li>
+          <li><a href="#shop" data-jump="propane">Propane & Fuel</a></li>
+          <li><a href="#shop" data-jump="water">Water & Ice</a></li>
+          <li><a href="#shop" data-jump="snacks">Snacks</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="#about">About</a></li>
+          <li><a href="#delivery">Delivery Info</a></li>
+          <li><a href="mailto:hello@getfuelplus.com">Contact</a></li>
           <li><a href="#">Wholesale</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Press</a></li>
+          <li><a href="#">Terms</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Support</h4>
+        <h4>Get In Touch</h4>
         <ul>
           <li><a href="mailto:hello@getfuelplus.com">hello@getfuelplus.com</a></li>
-          <li><a href="#">Shipping</a></li>
-          <li><a href="#">Returns</a></li>
-          <li><a href="#">FAQ</a></li>
+          <li><a href="tel:+18005551234">(800) 555-1234</a></li>
+          <li><a href="#">Bulk Orders</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 FuelPlus, Inc.</span>
+      <span>© 2026 FuelPlus. All rights reserved.</span>
       <span>getfuelplus.com</span>
     </div>
   </div>
 </footer>
 
-<!-- ============ CART SIDEBAR ============ -->
+<!-- ============ CART ============ -->
 <div class="overlay" id="overlay"></div>
 <aside class="cart" id="cart" aria-label="Shopping cart">
   <div class="cart-header">
@@ -1228,7 +1474,7 @@
       <span class="mono" id="cartSubtotal">$0.00</span>
     </div>
     <div class="cart-row">
-      <span>Shipping</span>
+      <span>Delivery</span>
       <span class="mono">Calculated at checkout</span>
     </div>
     <div class="cart-total">
@@ -1244,164 +1490,401 @@
   </div>
 </aside>
 
-<!-- ============ ICON LIBRARY (inline SVGs used by JS) ============ -->
+<!-- ============ ICON LIBRARY ============ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="i-can" viewBox="0 0 64 64">
+    <symbol id="i-tank" viewBox="0 0 64 64">
       <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-        <rect x="14" y="14" width="32" height="40" rx="2"/>
-        <path d="M22 14v-4h12v4"/>
-        <path d="M46 22 l8 -4 v8 l-8 -4 z" fill="currentColor"/>
-        <path d="M20 24h20M20 30h20M20 36h20"/>
+        <rect x="20" y="14" width="24" height="38" rx="3"/>
+        <path d="M26 14v-4h12v4"/>
+        <path d="M26 18 h12 M26 26 h12"/>
+        <circle cx="32" cy="40" r="4"/>
+      </g>
+    </symbol>
+    <symbol id="i-canister" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="22" y="18" width="20" height="34" rx="2"/>
+        <path d="M28 18v-6h8v6"/>
+        <path d="M26 28h12M26 36h12"/>
+      </g>
+    </symbol>
+    <symbol id="i-charcoal" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M14 18 L20 14 H44 L50 18 V52 H14 Z"/>
+        <path d="M20 14 V18 H50"/>
+        <path d="M22 28 l4 4 -4 4 M30 30 l4 4 -4 4 M38 28 l4 4 -4 4"/>
       </g>
     </symbol>
     <symbol id="i-bottle" viewBox="0 0 64 64">
       <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-        <path d="M26 8h12v8c4 2 6 6 6 12v24a4 4 0 0 1-4 4H24a4 4 0 0 1-4-4V28c0-6 2-10 6-12V8z"/>
-        <path d="M20 36h24"/>
-        <path d="M32 42v8" stroke-width="2.5"/>
+        <path d="M28 8h8v6c2 1 3 3 3 6v30a4 4 0 0 1-4 4H29a4 4 0 0 1-4-4V20c0-3 1-5 3-6V8z"/>
+        <path d="M25 26h14"/>
       </g>
     </symbol>
-    <symbol id="i-battery" viewBox="0 0 64 64">
+    <symbol id="i-watercase" viewBox="0 0 64 64">
       <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-        <rect x="10" y="20" width="42" height="28" rx="2"/>
-        <rect x="52" y="28" width="4" height="12"/>
-        <path d="M22 28v12M22 34h6"/>
-        <path d="M40 34h6"/>
+        <rect x="10" y="16" width="44" height="36" rx="2"/>
+        <path d="M10 24 H54 M22 16 V52 M34 16 V52 M46 16 V52"/>
       </g>
     </symbol>
-    <symbol id="i-bolt" viewBox="0 0 64 64">
+    <symbol id="i-jug" viewBox="0 0 64 64">
       <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-        <circle cx="32" cy="32" r="22"/>
-        <path d="M34 16 L22 36 H30 L28 48 L42 28 H34 L36 16 Z" fill="currentColor" stroke="none"/>
+        <path d="M22 14 H42 V20 L46 24 V52 H18 V24 L22 20 Z"/>
+        <rect x="28" y="10" width="8" height="6" rx="1"/>
+        <path d="M22 32 H42"/>
       </g>
     </symbol>
-    <symbol id="i-pump" viewBox="0 0 64 64">
+    <symbol id="i-icebag" viewBox="0 0 64 64">
       <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-        <path d="M14 54V14a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v40"/>
-        <path d="M10 54h32"/>
-        <rect x="18" y="16" width="16" height="14"/>
-        <path d="M38 22h6a4 4 0 0 1 4 4v18a4 4 0 0 0 4 4"/>
-        <path d="M52 32 v-6 a2 2 0 0 0 -2 -2 h-2"/>
+        <path d="M16 18 Q 32 8 48 18 V52 H16 Z"/>
+        <path d="M22 30 l3 3 -3 3 M32 28 l3 3 -3 3 M40 32 l3 3 -3 3 M28 40 l3 3 -3 3"/>
       </g>
     </symbol>
-    <symbol id="i-drum" viewBox="0 0 64 64">
+    <symbol id="i-block" viewBox="0 0 64 64">
       <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
-        <ellipse cx="32" cy="14" rx="18" ry="5"/>
-        <path d="M14 14 v36 a18 5 0 0 0 36 0 V14"/>
-        <ellipse cx="32" cy="26" rx="18" ry="5"/>
-        <ellipse cx="32" cy="38" rx="18" ry="5"/>
+        <path d="M14 22 L32 14 L50 22 V46 L32 54 L14 46 Z"/>
+        <path d="M14 22 L32 30 L50 22 M32 30 V54"/>
+      </g>
+    </symbol>
+    <symbol id="i-can" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <ellipse cx="32" cy="14" rx="12" ry="3"/>
+        <path d="M20 14 V52 a12 3 0 0 0 24 0 V14"/>
+        <path d="M22 22 H42 M22 30 H42"/>
+      </g>
+    </symbol>
+    <symbol id="i-cup" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M18 16 H46 L42 54 H22 Z"/>
+        <path d="M22 24 H42"/>
+        <path d="M28 8 Q 30 12 28 16 M34 8 Q 36 12 34 16"/>
+      </g>
+    </symbol>
+    <symbol id="i-juice" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="20" y="14" width="24" height="38" rx="2"/>
+        <path d="M26 14 v-4 a2 2 0 0 1 2 -2 h2 v6"/>
+        <path d="M24 26 H40"/>
+      </g>
+    </symbol>
+    <symbol id="i-chip" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M20 12 H44 V52 H20 Z"/>
+        <path d="M16 12 H48"/>
+        <path d="M24 24 H40 M24 32 H40"/>
+      </g>
+    </symbol>
+    <symbol id="i-jerky" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M16 18 H48 V46 a4 4 0 0 1 -4 4 H20 a4 4 0 0 1 -4 -4 Z"/>
+        <path d="M16 18 v-2 a4 4 0 0 1 4 -4 h24 a4 4 0 0 1 4 4 v2"/>
+        <path d="M22 28 H42"/>
+      </g>
+    </symbol>
+    <symbol id="i-trail" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M14 16 H50 L46 52 H18 Z"/>
+        <circle cx="24" cy="32" r="2"/>
+        <circle cx="32" cy="36" r="2.5"/>
+        <circle cx="40" cy="30" r="2"/>
+        <circle cx="28" cy="42" r="2"/>
+        <circle cx="38" cy="42" r="1.6"/>
+      </g>
+    </symbol>
+    <symbol id="i-candy" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <ellipse cx="32" cy="32" rx="14" ry="8"/>
+        <path d="M18 32 L8 26 L12 32 L8 38 Z"/>
+        <path d="M46 32 L56 26 L52 32 L56 38 Z"/>
+      </g>
+    </symbol>
+    <symbol id="i-bar" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="12" y="22" width="40" height="20" rx="2"/>
+        <path d="M18 32 H46"/>
+        <path d="M14 22 v-4 h36 v4"/>
+      </g>
+    </symbol>
+    <symbol id="i-firewood" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <ellipse cx="16" cy="22" rx="3" ry="6"/>
+        <path d="M16 16 H46 M16 28 H46"/>
+        <ellipse cx="46" cy="22" rx="3" ry="6"/>
+        <ellipse cx="22" cy="40" rx="3" ry="6"/>
+        <path d="M22 34 H52 M22 46 H52"/>
+        <ellipse cx="52" cy="40" rx="3" ry="6"/>
+      </g>
+    </symbol>
+    <symbol id="i-fire" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M32 8 C 34 16 42 18 42 28 C 42 32 38 34 36 34 C 38 30 34 28 34 22 C 32 26 28 28 28 34 C 28 38 24 40 24 44 C 24 50 28 54 32 54 C 36 54 40 50 40 44 C 40 38 36 36 36 32"/>
+      </g>
+    </symbol>
+    <symbol id="i-cooler" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M10 22 H54 V50 a2 2 0 0 1 -2 2 H12 a2 2 0 0 1 -2 -2 Z"/>
+        <path d="M14 22 V18 a2 2 0 0 1 2 -2 h32 a2 2 0 0 1 2 2 v4"/>
+        <path d="M22 30 H42"/>
+      </g>
+    </symbol>
+    <symbol id="i-plate" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <ellipse cx="32" cy="32" rx="22" ry="6"/>
+        <ellipse cx="32" cy="30" rx="22" ry="6"/>
+        <path d="M10 30 v4 a22 6 0 0 0 44 0 v-4"/>
+      </g>
+    </symbol>
+    <symbol id="i-trash" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M16 16 H48 L44 54 H20 Z"/>
+        <path d="M12 16 H52"/>
+        <path d="M26 12 H38 V16"/>
+      </g>
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="22" y="18" width="20" height="34" rx="2"/>
+        <path d="M28 18v-6h8v6"/>
+        <circle cx="32" cy="34" r="5"/>
+        <path d="M32 26 v2 M32 40 v2 M24 34 h2 M38 34 h2"/>
+      </g>
+    </symbol>
+    <symbol id="i-bug" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="22" y="18" width="20" height="34" rx="2"/>
+        <path d="M28 18v-6h8v6"/>
+        <path d="M22 50 l-6 4 M42 50 l6 4"/>
+        <circle cx="32" cy="34" r="3"/>
+      </g>
+    </symbol>
+    <symbol id="i-charger" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="18" y="10" width="28" height="44" rx="3"/>
+        <path d="M22 18 H42 V42 H22 Z"/>
+        <path d="M28 50 H36"/>
+      </g>
+    </symbol>
+    <symbol id="i-flashlight" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M22 18 H42 L46 22 V42 L42 46 H22 Z"/>
+        <path d="M22 26 H46"/>
+        <path d="M14 32 H22 M10 22 L22 28 M10 42 L22 36"/>
+      </g>
+    </symbol>
+    <symbol id="i-def" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M22 14 H42 V18 L46 22 V52 H18 V22 L22 18 Z"/>
+        <rect x="28" y="8" width="8" height="6" rx="1"/>
+        <path d="M28 36 h8 M28 30 h8 M28 42 h8"/>
+      </g>
+    </symbol>
+    <symbol id="i-pellet" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M14 18 H50 V50 a2 2 0 0 1 -2 2 H16 a2 2 0 0 1 -2 -2 Z"/>
+        <path d="M14 18 L20 14 H44 L50 18"/>
+        <ellipse cx="22" cy="32" rx="2" ry="3"/>
+        <ellipse cx="32" cy="36" rx="2" ry="3"/>
+        <ellipse cx="42" cy="32" rx="2" ry="3"/>
+        <ellipse cx="28" cy="42" rx="2" ry="3"/>
+        <ellipse cx="38" cy="42" rx="2" ry="3"/>
+      </g>
+    </symbol>
+    <symbol id="i-icemelt" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M16 14 H48 L52 52 H12 Z"/>
+        <path d="M22 28 l3 3 M28 32 l3 3 M36 28 l3 3 M40 38 l3 3 M26 42 l3 3"/>
+      </g>
+    </symbol>
+    <symbol id="i-kerosene" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M22 14 H42 V20 L46 24 V52 H18 V24 L22 20 Z"/>
+        <rect x="28" y="10" width="8" height="6" rx="1"/>
+        <path d="M22 30 H42 M22 38 H42"/>
+      </g>
+    </symbol>
+    <symbol id="i-pickup" viewBox="0 0 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M16 18 H48 V46 H16 Z"/>
+        <path d="M16 18 V12 H48"/>
+        <path d="M22 32 h20"/>
       </g>
     </symbol>
   </defs>
 </svg>
 
 <script>
-/* ==========================================================
-   FuelPlus — Marketplace storefront
-   ----------------------------------------------------------
-   TODO: Replace hardcoded products[] with fetch from Cloudflare Worker
-   Endpoint: https://getfuelplus.com/api/products
-   Worker will proxy Airtable base for product catalog.
+/* ============================================
+   TODO: AIRTABLE + CLOUDFLARE WORKER INTEGRATION
+   Replace hardcoded products[] array with:
+   fetch('https://getfuelplus.com/api/products')
+     .then(res => res.json())
+     .then(data => renderProducts(data))
 
-   Suggested fetch shape (when wiring):
-     const res = await fetch('https://getfuelplus.com/api/products');
-     const products = await res.json();
-     renderProducts(products);
-
-   Product schema (matches Airtable record fields):
-     { id, sku, name, desc, price, icon, tag }
-   ========================================================== */
+   Cloudflare Worker proxies Airtable base
+   Airtable fields: Name, Description, Price, Unit, Category, Image URL, In Stock
+   ============================================ */
 
 const products = [
-  {
-    id: 'fp-001', sku: 'FP-001',
-    name: 'PrimeBurn Diesel Additive',
-    desc: 'Cetane booster + injector cleaner. One bottle treats 250 gallons. Cold-weather formula.',
-    price: 28.00, icon: 'i-bottle', tag: 'Bestseller'
-  },
-  {
-    id: 'fp-002', sku: 'FP-014',
-    name: 'HD Steel Jerry Can — 5gal',
-    desc: 'NATO-spec 20L steel can. Lever-lock spout, integrated breather, baked-on enamel finish.',
-    price: 89.00, icon: 'i-can', tag: 'New'
-  },
-  {
-    id: 'fp-003', sku: 'FP-027',
-    name: 'Volt Reserve AGM Battery',
-    desc: '12V 100Ah AGM deep-cycle. Maintenance-free, vibration resistant. 5-year warranty.',
-    price: 249.00, icon: 'i-battery', tag: null
-  },
-  {
-    id: 'fp-004', sku: 'FP-033',
-    name: 'Ignition Energy Shots — 12pk',
-    desc: '200mg caffeine, B-vitamin complex, no sugar. Designed for long shifts and longer drives.',
-    price: 34.00, icon: 'i-bolt', tag: 'Trending'
-  },
-  {
-    id: 'fp-005', sku: 'FP-041',
-    name: 'Field Pump — 12V Transfer',
-    desc: '15 GPM transfer pump for diesel and kerosene. Auto-shutoff nozzle, 12ft hose included.',
-    price: 219.00, icon: 'i-pump', tag: null
-  },
-  {
-    id: 'fp-006', sku: 'FP-058',
-    name: 'Bulk Stabilizer — 55gal Drum',
-    desc: 'Long-term fuel stabilizer for stored gasoline and diesel. 1oz treats 5gal. UN-approved drum.',
-    price: 1140.00, icon: 'i-drum', tag: 'Wholesale'
-  }
+  // PROPANE & FUEL
+  { name: "20lb Propane Tank Exchange", desc: "Standard grill tank, full swap", price: 24.99, unit: "/tank", category: "propane", icon: "i-tank" },
+  { name: "20lb Propane Tank + New Tank", desc: "No exchange needed, brand new tank", price: 54.99, unit: "/tank", category: "propane", icon: "i-tank" },
+  { name: "Propane Refill (Bring Your Tank)", desc: "We fill your existing 20lb tank", price: 18.99, unit: "/fill", category: "propane", icon: "i-tank" },
+  { name: "Empty Tank Pickup", desc: "We pick up your empties, no charge with exchange", price: 0.00, unit: "FREE w/ exchange", category: "propane", icon: "i-pickup" },
+  { name: "Coleman 1lb Propane (2-Pack)", desc: "Camping stove canisters", price: 8.99, unit: "/2-pack", category: "propane", icon: "i-canister" },
+  { name: "Charcoal 15lb Bag", desc: "Kingsford Original briquettes", price: 14.99, unit: "/bag", category: "propane", icon: "i-charcoal" },
+  { name: "Lighter Fluid 32oz", desc: "Kingsford, squeeze bottle", price: 5.99, unit: "/bottle", category: "propane", icon: "i-bottle" },
+
+  // WATER & ICE
+  { name: "Case of Water (24-pack)", desc: "16.9oz bottles", price: 5.99, unit: "/case", category: "water", icon: "i-watercase" },
+  { name: "5-Gallon Water Jug", desc: "Purified, fits standard dispensers", price: 9.99, unit: "/jug", category: "water", icon: "i-jug" },
+  { name: "5-Gallon Jug Exchange", desc: "Swap your empty for a full jug", price: 6.99, unit: "/exchange", category: "water", icon: "i-jug" },
+  { name: "Bagged Ice 10lb", desc: "Party-ready ice bags", price: 3.99, unit: "/bag", category: "water", icon: "i-icebag" },
+  { name: "Bagged Ice 20lb", desc: "Large bag, events and coolers", price: 6.99, unit: "/bag", category: "water", icon: "i-icebag" },
+  { name: "Block Ice", desc: "Slow-melt block for coolers", price: 4.99, unit: "/block", category: "water", icon: "i-block" },
+  { name: "Dry Ice 5lb", desc: "Fog effects, flash freezing, shipping", price: 12.99, unit: "/5lb", category: "water", icon: "i-block" },
+
+  // DRINKS
+  { name: "Gatorade Variety (12-pack)", desc: "Assorted flavors, 20oz bottles", price: 14.99, unit: "/12-pack", category: "drinks", icon: "i-bottle" },
+  { name: "Monster Energy (4-pack)", desc: "Original, 16oz cans", price: 9.99, unit: "/4-pack", category: "drinks", icon: "i-can" },
+  { name: "Coca-Cola (12-pack cans)", desc: "Classic, 12oz cans", price: 7.99, unit: "/12-pack", category: "drinks", icon: "i-can" },
+  { name: "Red Bull (4-pack)", desc: "Original, 8.4oz cans", price: 8.99, unit: "/4-pack", category: "drinks", icon: "i-can" },
+  { name: "Juice Box Variety (10-pack)", desc: "Kids assorted, 6.75oz", price: 5.99, unit: "/10-pack", category: "drinks", icon: "i-juice" },
+
+  // SNACKS
+  { name: "Chip Variety Pack (30ct)", desc: "Lay's, Doritos, Cheetos mix", price: 16.99, unit: "/box", category: "snacks", icon: "i-chip" },
+  { name: "Beef Jerky Assorted (6-pack)", desc: "Jack Link's, mixed flavors", price: 24.99, unit: "/6-pack", category: "snacks", icon: "i-jerky" },
+  { name: "Trail Mix Bags (12ct)", desc: "Individual grab-and-go bags", price: 12.99, unit: "/box", category: "snacks", icon: "i-trail" },
+  { name: "Candy Variety (40ct)", desc: "Resale-ready, mixed full-size bars", price: 29.99, unit: "/box", category: "snacks", icon: "i-candy" },
+  { name: "Granola Bars (24ct)", desc: "Nature Valley, Crunchy Oats", price: 9.99, unit: "/box", category: "snacks", icon: "i-bar" },
+
+  // SUPPLIES
+  { name: "Firewood Bundle", desc: "Kiln-dried, ~6 logs per bundle", price: 7.99, unit: "/bundle", category: "supplies", icon: "i-firewood" },
+  { name: "Fire Starter Kit", desc: "Fatwood + matches combo pack", price: 6.99, unit: "/kit", category: "supplies", icon: "i-fire" },
+  { name: "Styrofoam Cooler 28qt", desc: "Disposable, fits a 12-pack + ice", price: 4.99, unit: "/each", category: "supplies", icon: "i-cooler" },
+  { name: "Paper Plates + Cups Combo", desc: "50 plates, 50 cups, 50 napkins", price: 11.99, unit: "/pack", category: "supplies", icon: "i-plate" },
+  { name: "Trash Bags 30-Gallon (20ct)", desc: "Heavy duty, drawstring", price: 8.99, unit: "/box", category: "supplies", icon: "i-trash" },
+  { name: "Sunscreen SPF 50", desc: "Banana Boat Sport, 8oz", price: 9.99, unit: "/bottle", category: "supplies", icon: "i-sun" },
+  { name: "Bug Spray OFF! Deep Woods", desc: "Aerosol, 6oz", price: 7.99, unit: "/can", category: "supplies", icon: "i-bug" },
+  { name: "Portable Phone Charger", desc: "10,000mAh power bank", price: 19.99, unit: "/each", category: "supplies", icon: "i-charger" },
+  { name: "Flashlight + Batteries", desc: "LED, includes 4 AA", price: 8.99, unit: "/each", category: "supplies", icon: "i-flashlight" },
+  { name: "Blue DEF Fluid 2.5gal", desc: "Diesel exhaust fluid, API certified", price: 14.99, unit: "/jug", category: "supplies", icon: "i-def" },
+
+  // SEASONAL
+  { name: "Pellet Fuel 40lb Bag", desc: "Premium hardwood heating pellets", price: 7.99, unit: "/bag", category: "seasonal", icon: "i-pellet" },
+  { name: "Ice Melt 50lb Bag", desc: "Calcium chloride blend", price: 16.99, unit: "/bag", category: "seasonal", icon: "i-icemelt" },
+  { name: "Kerosene 2.5gal", desc: "K-1 grade, heater-ready", price: 19.99, unit: "/jug", category: "seasonal", icon: "i-kerosene" }
 ];
+
+// Stable id from name (used as cart key) — survives reordering
+products.forEach(p => { p.id = p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); });
+
+const categories = [
+  { key: 'all',      label: 'All',              title: 'All Products' },
+  { key: 'propane',  label: 'Propane & Fuel',   title: 'Propane & Fuel' },
+  { key: 'water',    label: 'Water & Ice',      title: 'Water & Ice' },
+  { key: 'drinks',   label: 'Drinks',           title: 'Drinks' },
+  { key: 'snacks',   label: 'Snacks',           title: 'Snacks' },
+  { key: 'supplies', label: 'Supplies',         title: 'Supplies' },
+  { key: 'seasonal', label: 'Seasonal',         title: 'Seasonal' }
+];
+
+const categoryLabel = {
+  propane: 'Propane',
+  water: 'Water/Ice',
+  drinks: 'Drinks',
+  snacks: 'Snacks',
+  supplies: 'Supplies',
+  seasonal: 'Seasonal'
+};
 
 /* ---------- State ---------- */
 const STORAGE_KEY = 'fuelplus.cart.v1';
 let cart = loadCart();
+let activeCat = 'all';
 
 function loadCart() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     return raw ? JSON.parse(raw) : [];
-  } catch (e) {
-    return [];
-  }
+  } catch (e) { return []; }
 }
 
 function saveCart() {
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify(cart)); }
-  catch (e) { /* storage may be unavailable in private mode */ }
+  catch (e) {}
 }
 
-/* ---------- Money ---------- */
 const fmt = n => '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+/* ---------- Render: Category tabs ---------- */
+function renderTabs() {
+  const tabsEl = document.getElementById('catTabs');
+  tabsEl.innerHTML = categories.map(c => {
+    const count = c.key === 'all' ? products.length : products.filter(p => p.category === c.key).length;
+    return `<button class="cat-tab ${c.key === activeCat ? 'active' : ''}" data-cat="${c.key}">
+      ${c.label} <span class="count">${count}</span>
+    </button>`;
+  }).join('');
+}
 
 /* ---------- Render: Products ---------- */
 function renderProducts() {
   const grid = document.getElementById('productGrid');
-  grid.innerHTML = products.map(p => `
-    <article class="product-card" data-id="${p.id}">
+  const filtered = activeCat === 'all' ? products : products.filter(p => p.category === activeCat);
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="empty-state"><div class="title">No products in this category yet</div><p>Check back soon — we're stocking up.</p></div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map((p, i) => {
+    const isFree = p.price === 0;
+    return `
+    <article class="product-card" data-id="${p.id}" style="animation-delay: ${Math.min(i * 30, 240)}ms">
       <div class="product-image">
-        ${p.tag ? `<span class="product-tag">${p.tag}</span>` : ''}
-        <svg><use href="#${p.icon}"/></svg>
+        <span class="product-cat-badge">${categoryLabel[p.category] || p.category}</span>
+        <span class="product-stock">In Stock</span>
+        <span class="product-icon"><svg><use href="#${p.icon}"/></svg></span>
       </div>
-      <div class="product-sku">${p.sku}</div>
       <h3 class="product-name">${p.name}</h3>
       <p class="product-desc">${p.desc}</p>
       <div class="product-footer">
-        <div class="product-price"><span class="currency">$</span>${p.price.toFixed(2)}</div>
-        <button class="add-btn" data-add="${p.id}">
+        <div class="product-price-wrap">
+          ${isFree
+            ? `<span class="product-price free">${p.unit}</span>`
+            : `<span class="product-price">${fmt(p.price)}</span><span class="product-unit">${p.unit}</span>`
+          }
+        </div>
+        <button class="add-btn" data-add="${p.id}" ${isFree ? 'aria-label="Add free pickup"' : ''}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
             <path d="M12 5v14M5 12h14"/>
           </svg>
           Add
         </button>
       </div>
-    </article>
-  `).join('');
+    </article>`;
+  }).join('');
+}
+
+function setCategory(key) {
+  if (activeCat === key) return;
+  activeCat = key;
+  const grid = document.getElementById('productGrid');
+  grid.classList.add('filtering');
+  document.querySelectorAll('.cat-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.cat === key);
+  });
+  const cat = categories.find(c => c.key === key);
+  document.getElementById('catalogTitle').textContent = cat ? cat.title : 'Products';
+  setTimeout(() => {
+    renderProducts();
+    grid.classList.remove('filtering');
+  }, 180);
 }
 
 /* ---------- Render: Cart ---------- */
 function renderCart() {
   const itemsEl = document.getElementById('cartItems');
-  const footer = document.getElementById('cartFooter');
   const checkoutBtn = document.getElementById('checkoutBtn');
 
   if (cart.length === 0) {
@@ -1423,18 +1906,16 @@ function renderCart() {
       const lineTotal = p.price * item.qty;
       return `
         <div class="cart-item" data-id="${p.id}">
-          <div class="cart-item-image">
-            <svg><use href="#${p.icon}"/></svg>
-          </div>
+          <div class="cart-item-image"><svg><use href="#${p.icon}"/></svg></div>
           <div class="cart-item-info">
             <div class="cart-item-name">${p.name}</div>
-            <div class="cart-item-price mono">${fmt(p.price)} ea</div>
+            <div class="cart-item-price mono">${p.price === 0 ? 'Free' : fmt(p.price)} ${p.unit}</div>
             <div class="cart-item-controls">
-              <button class="qty-btn" data-dec="${p.id}" aria-label="Decrease quantity">
+              <button class="qty-btn" data-dec="${p.id}" aria-label="Decrease">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/></svg>
               </button>
               <span class="qty-val">${item.qty}</span>
-              <button class="qty-btn" data-inc="${p.id}" aria-label="Increase quantity">
+              <button class="qty-btn" data-inc="${p.id}" aria-label="Increase">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
               </button>
             </div>
@@ -1476,9 +1957,7 @@ function changeQty(id, delta) {
   const item = cart.find(i => i.id === id);
   if (!item) return;
   item.qty += delta;
-  if (item.qty <= 0) {
-    cart = cart.filter(i => i.id !== id);
-  }
+  if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
   saveCart();
   renderCart();
 }
@@ -1489,7 +1968,7 @@ function removeFromCart(id) {
   renderCart();
 }
 
-/* ---------- Sidebar open/close ---------- */
+/* ---------- Sidebar ---------- */
 const cartEl = document.getElementById('cart');
 const overlay = document.getElementById('overlay');
 
@@ -1534,12 +2013,17 @@ mobileNav.querySelectorAll('a').forEach(a => {
 
 /* ---------- Event delegation ---------- */
 document.addEventListener('click', e => {
+  const tab = e.target.closest('[data-cat]');
+  if (tab) { setCategory(tab.dataset.cat); return; }
+
+  const jump = e.target.closest('[data-jump]');
+  if (jump) { setCategory(jump.dataset.jump); return; }
+
   const addBtn = e.target.closest('[data-add]');
   if (addBtn) {
     addToCart(addBtn.dataset.add);
     addBtn.classList.add('added');
     setTimeout(() => addBtn.classList.remove('added'), 600);
-    // Subtle feedback: brief badge bounce already triggered by visible class
     return;
   }
   const inc = e.target.closest('[data-inc]');
@@ -1552,7 +2036,7 @@ document.addEventListener('click', e => {
 
 document.getElementById('checkoutBtn').addEventListener('click', () => {
   // TODO: hook into Stripe / Shopify checkout via Cloudflare Worker
-  alert('Checkout — wiring to payment processor coming soon.');
+  alert('Checkout — payment integration coming soon.');
 });
 
 /* ---------- Reveal animations ---------- */
@@ -1563,13 +2047,14 @@ const observer = new IntersectionObserver(entries => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 
 /* ---------- Init ---------- */
+renderTabs();
 renderProducts();
 renderCart();
 
-document.querySelectorAll('.product-card, .about-grid > *, .hero-meta-item').forEach(el => {
+document.querySelectorAll('.delivery-card, .about-grid > *').forEach(el => {
   el.classList.add('fade-up');
   observer.observe(el);
 });
